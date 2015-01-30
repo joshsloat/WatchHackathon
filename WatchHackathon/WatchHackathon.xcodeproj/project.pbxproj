@@ -20,6 +20,12 @@
 		A4D99DFB1A7C22C8001BD5BC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D99DF91A7C22C8001BD5BC /* Interface.storyboard */; };
 		A4D99DFD1A7C22C8001BD5BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D99DFC1A7C22C8001BD5BC /* Images.xcassets */; };
 		A4D99E001A7C22C8001BD5BC /* WatchHackathon WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A4D99DE71A7C22C8001BD5BC /* WatchHackathon WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A4D99E111A7C2D84001BD5BC /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4D99E0D1A7C2D84001BD5BC /* AcousticModelEnglish.bundle */; };
+		A4D99E121A7C2D84001BD5BC /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4D99E0E1A7C2D84001BD5BC /* AcousticModelSpanish.bundle */; };
+		A4D99E131A7C2D84001BD5BC /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D99E0F1A7C2D84001BD5BC /* OpenEars.framework */; };
+		A4D99E141A7C2D84001BD5BC /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D99E101A7C2D84001BD5BC /* Slt.framework */; };
+		A4D99E1B1A7C2E0F001BD5BC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D99E191A7C2E0F001BD5BC /* AudioToolbox.framework */; };
+		A4D99E1C1A7C2E0F001BD5BC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D99E1A1A7C2E0F001BD5BC /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +89,12 @@
 		A4D99DF81A7C22C8001BD5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4D99DFA1A7C22C8001BD5BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		A4D99DFC1A7C22C8001BD5BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A4D99E0D1A7C2D84001BD5BC /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		A4D99E0E1A7C2D84001BD5BC /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		A4D99E0F1A7C2D84001BD5BC /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		A4D99E101A7C2D84001BD5BC /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		A4D99E191A7C2E0F001BD5BC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A4D99E1A1A7C2E0F001BD5BC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +116,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D99E1B1A7C2E0F001BD5BC /* AudioToolbox.framework in Frameworks */,
+				A4D99E1C1A7C2E0F001BD5BC /* AVFoundation.framework in Frameworks */,
+				A4D99E141A7C2D84001BD5BC /* Slt.framework in Frameworks */,
+				A4D99E131A7C2D84001BD5BC /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +129,8 @@
 		A4D99DB11A7C220B001BD5BC = {
 			isa = PBXGroup;
 			children = (
+				A4D99E191A7C2E0F001BD5BC /* AudioToolbox.framework */,
+				A4D99E1A1A7C2E0F001BD5BC /* AVFoundation.framework */,
 				A4D99DBC1A7C220B001BD5BC /* WatchHackathon */,
 				A4D99DD61A7C220B001BD5BC /* WatchHackathonTests */,
 				A4D99DE81A7C22C8001BD5BC /* WatchHackathon WatchKit Extension */,
@@ -176,9 +194,8 @@
 		A4D99DE81A7C22C8001BD5BC /* WatchHackathon WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A4D99DEB1A7C22C8001BD5BC /* InterfaceController.h */,
-				A4D99DEC1A7C22C8001BD5BC /* InterfaceController.m */,
-				A4D99DEE1A7C22C8001BD5BC /* Images.xcassets */,
+				A4D99E081A7C2C49001BD5BC /* Classes */,
+				A4D99E0A1A7C2C6E001BD5BC /* Resources */,
 				A4D99DE91A7C22C8001BD5BC /* Supporting Files */,
 			);
 			path = "WatchHackathon WatchKit Extension";
@@ -208,6 +225,52 @@
 				A4D99DF81A7C22C8001BD5BC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4D99E081A7C2C49001BD5BC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A4D99E0B1A7C2C82001BD5BC /* ThirdParty */,
+				A4D99E091A7C2C54001BD5BC /* InterfaceControllers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		A4D99E091A7C2C54001BD5BC /* InterfaceControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A4D99DEB1A7C22C8001BD5BC /* InterfaceController.h */,
+				A4D99DEC1A7C22C8001BD5BC /* InterfaceController.m */,
+			);
+			name = InterfaceControllers;
+			sourceTree = "<group>";
+		};
+		A4D99E0A1A7C2C6E001BD5BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A4D99DEE1A7C22C8001BD5BC /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A4D99E0B1A7C2C82001BD5BC /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				A4D99E0C1A7C2D84001BD5BC /* Framework */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		A4D99E0C1A7C2D84001BD5BC /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				A4D99E0D1A7C2D84001BD5BC /* AcousticModelEnglish.bundle */,
+				A4D99E0E1A7C2D84001BD5BC /* AcousticModelSpanish.bundle */,
+				A4D99E0F1A7C2D84001BD5BC /* OpenEars.framework */,
+				A4D99E101A7C2D84001BD5BC /* Slt.framework */,
+			);
+			name = Framework;
+			path = ThirdParty/OpenEars/Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +413,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D99E111A7C2D84001BD5BC /* AcousticModelEnglish.bundle in Resources */,
+				A4D99E121A7C2D84001BD5BC /* AcousticModelSpanish.bundle in Resources */,
 				A4D99DF31A7C22C8001BD5BC /* WatchHackathon WatchKit App.app in Resources */,
 				A4D99DEF1A7C22C8001BD5BC /* Images.xcassets in Resources */,
 			);
@@ -608,6 +673,12 @@
 		A4D99E051A7C22C8001BD5BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WatchHackathon",
+					WatchKit,
+					Extension/ThirdParty/OpenEars/Framework,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -622,6 +693,12 @@
 		A4D99E061A7C22C8001BD5BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WatchHackathon",
+					WatchKit,
+					Extension/ThirdParty/OpenEars/Framework,
+				);
 				INFOPLIST_FILE = "WatchHackathon WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
