@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4D6EF2A1A7C61CF00976605 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4D6EF261A7C61CF00976605 /* AcousticModelEnglish.bundle */; };
+		A4D6EF2B1A7C61CF00976605 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4D6EF271A7C61CF00976605 /* AcousticModelSpanish.bundle */; };
+		A4D6EF2C1A7C61CF00976605 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D6EF281A7C61CF00976605 /* OpenEars.framework */; };
+		A4D6EF2D1A7C61CF00976605 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D6EF291A7C61CF00976605 /* Slt.framework */; };
 		A4D99DC01A7C220B001BD5BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D99DBF1A7C220B001BD5BC /* main.m */; };
 		A4D99DC31A7C220B001BD5BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D99DC21A7C220B001BD5BC /* AppDelegate.m */; };
 		A4D99DC61A7C220B001BD5BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D99DC51A7C220B001BD5BC /* ViewController.m */; };
@@ -20,10 +24,6 @@
 		A4D99DFB1A7C22C8001BD5BC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D99DF91A7C22C8001BD5BC /* Interface.storyboard */; };
 		A4D99DFD1A7C22C8001BD5BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D99DFC1A7C22C8001BD5BC /* Images.xcassets */; };
 		A4D99E001A7C22C8001BD5BC /* WatchHackathon WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A4D99DE71A7C22C8001BD5BC /* WatchHackathon WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A4D99E111A7C2D84001BD5BC /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4D99E0D1A7C2D84001BD5BC /* AcousticModelEnglish.bundle */; };
-		A4D99E121A7C2D84001BD5BC /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4D99E0E1A7C2D84001BD5BC /* AcousticModelSpanish.bundle */; };
-		A4D99E131A7C2D84001BD5BC /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D99E0F1A7C2D84001BD5BC /* OpenEars.framework */; };
-		A4D99E141A7C2D84001BD5BC /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D99E101A7C2D84001BD5BC /* Slt.framework */; };
 		A4D99E1B1A7C2E0F001BD5BC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D99E191A7C2E0F001BD5BC /* AudioToolbox.framework */; };
 		A4D99E1C1A7C2E0F001BD5BC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D99E1A1A7C2E0F001BD5BC /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +67,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A4D6EF261A7C61CF00976605 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		A4D6EF271A7C61CF00976605 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		A4D6EF281A7C61CF00976605 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		A4D6EF291A7C61CF00976605 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		A4D99DBA1A7C220B001BD5BC /* WatchHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D99DBE1A7C220B001BD5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4D99DBF1A7C220B001BD5BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,10 +93,6 @@
 		A4D99DF81A7C22C8001BD5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4D99DFA1A7C22C8001BD5BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		A4D99DFC1A7C22C8001BD5BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A4D99E0D1A7C2D84001BD5BC /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
-		A4D99E0E1A7C2D84001BD5BC /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
-		A4D99E0F1A7C2D84001BD5BC /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
-		A4D99E101A7C2D84001BD5BC /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		A4D99E191A7C2E0F001BD5BC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A4D99E1A1A7C2E0F001BD5BC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -116,16 +116,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D6EF2D1A7C61CF00976605 /* Slt.framework in Frameworks */,
 				A4D99E1B1A7C2E0F001BD5BC /* AudioToolbox.framework in Frameworks */,
 				A4D99E1C1A7C2E0F001BD5BC /* AVFoundation.framework in Frameworks */,
-				A4D99E141A7C2D84001BD5BC /* Slt.framework in Frameworks */,
-				A4D99E131A7C2D84001BD5BC /* OpenEars.framework in Frameworks */,
+				A4D6EF2C1A7C61CF00976605 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4D6EF251A7C61CF00976605 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6EF261A7C61CF00976605 /* AcousticModelEnglish.bundle */,
+				A4D6EF271A7C61CF00976605 /* AcousticModelSpanish.bundle */,
+				A4D6EF281A7C61CF00976605 /* OpenEars.framework */,
+				A4D6EF291A7C61CF00976605 /* Slt.framework */,
+			);
+			name = Framework;
+			path = ThirdParty/OpenEars/Framework;
+			sourceTree = "<group>";
+		};
 		A4D99DB11A7C220B001BD5BC = {
 			isa = PBXGroup;
 			children = (
@@ -256,21 +268,9 @@
 		A4D99E0B1A7C2C82001BD5BC /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				A4D99E0C1A7C2D84001BD5BC /* Framework */,
+				A4D6EF251A7C61CF00976605 /* Framework */,
 			);
 			name = ThirdParty;
-			sourceTree = "<group>";
-		};
-		A4D99E0C1A7C2D84001BD5BC /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				A4D99E0D1A7C2D84001BD5BC /* AcousticModelEnglish.bundle */,
-				A4D99E0E1A7C2D84001BD5BC /* AcousticModelSpanish.bundle */,
-				A4D99E0F1A7C2D84001BD5BC /* OpenEars.framework */,
-				A4D99E101A7C2D84001BD5BC /* Slt.framework */,
-			);
-			name = Framework;
-			path = ThirdParty/OpenEars/Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,8 +413,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4D99E111A7C2D84001BD5BC /* AcousticModelEnglish.bundle in Resources */,
-				A4D99E121A7C2D84001BD5BC /* AcousticModelSpanish.bundle in Resources */,
+				A4D6EF2A1A7C61CF00976605 /* AcousticModelEnglish.bundle in Resources */,
+				A4D6EF2B1A7C61CF00976605 /* AcousticModelSpanish.bundle in Resources */,
 				A4D99DF31A7C22C8001BD5BC /* WatchHackathon WatchKit App.app in Resources */,
 				A4D99DEF1A7C22C8001BD5BC /* Images.xcassets in Resources */,
 			);
@@ -678,6 +678,9 @@
 					"$(PROJECT_DIR)/WatchHackathon",
 					WatchKit,
 					Extension/ThirdParty/OpenEars/Framework,
+					"$(PROJECT_DIR)/WatchHackathon",
+					WatchKit,
+					Extension/ThirdParty/OpenEars/Framework,
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -695,6 +698,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/WatchHackathon",
+					WatchKit,
+					Extension/ThirdParty/OpenEars/Framework,
 					"$(PROJECT_DIR)/WatchHackathon",
 					WatchKit,
 					Extension/ThirdParty/OpenEars/Framework,
@@ -725,6 +731,7 @@
 				A4D99DDF1A7C220B001BD5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4D99DE01A7C220B001BD5BC /* Build configuration list for PBXNativeTarget "WatchHackathonTests" */ = {
 			isa = XCConfigurationList;
@@ -733,6 +740,7 @@
 				A4D99DE21A7C220B001BD5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4D99E011A7C22C8001BD5BC /* Build configuration list for PBXNativeTarget "WatchHackathon WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -741,6 +749,7 @@
 				A4D99E031A7C22C8001BD5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4D99E041A7C22C8001BD5BC /* Build configuration list for PBXNativeTarget "WatchHackathon WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -749,6 +758,7 @@
 				A4D99E061A7C22C8001BD5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

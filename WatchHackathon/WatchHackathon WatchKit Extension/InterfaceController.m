@@ -20,12 +20,81 @@
 
 @property (nonatomic, strong) NSMutableAttributedString *attributedString;
 
+@property (nonatomic, strong) NSDictionary *wordReplacements;
+
 @end
 
+#warning - TODO
+/*
+ mic permission in extension??
+ ability to switch vocabularies
+ long press menu to show available commands
+ undo last - needs logic to not assert on certain commands since there is no replacement
+ clear
+*/
 
 @implementation InterfaceController
 
 #pragma mark - Init / Dealloc
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        [self initializeWordReplacements];
+    }
+    
+    return self;
+}
+
+- (void)initializeWordReplacements
+{
+    self.wordReplacements = @{ @"ONE" : @"1",
+                               @"TWO" : @"2",
+                               @"THREE" : @"3",
+                               @"FOUR" : @"4",
+                               @"FIVE" : @"5",
+                               @"SIX" : @"6",
+                               @"SEVEN" : @"7",
+                               @"EIGHT" : @"8",
+                               @"NINE" : @"9",
+                               @"TEN" : @"10",
+                               @"ELEVEN" : @"11",
+                               @"TWELVE" : @"12",
+                               @"THIRTEEN" : @"13",
+                               @"FOURTEEN" : @"14",
+                               @"FIFTEEN" : @"15",
+                               @"SIXTEEN" : @"16",
+                               @"SEVENTEEN" : @"17",
+                               @"EIGHTEEN" : @"18",
+                               @"NINETEEN" : @"19",
+                               @"TWENTY" : @"20",
+                               @"THIRTY" : @"30",
+                               @"FORTY" : @"40",
+                               @"FIFTY" : @"50",
+                               @"SIXTY" : @"60",
+                               @"SEVENTY" : @"70",
+                               @"EIGHTY" : @"80",
+                               @"NINETY" : @"90",
+                               @"AND" : @" ",
+                               @"A" : @"1",
+                               @"INCHES" : @"\"",
+                               @"INCH" : @"\"",
+                               @"FEET" : @"'",
+                               @"FOOT" : @"'",
+                               @"BY" : @" x ",
+                               @"QUARTER" : @"/4",
+                               @"QUARTERS" : @"/4",
+                               @"FOURTH" : @"/4",
+                               @"FOURTHS" : @"/4",
+                               @"EIGHTH" : @"/8",
+                               @"EIGHTHS" : @"/8",
+                               @"HALF" : @"/2",
+                               @"SIXTEENTH" : @"/16",
+                               @"SIXTEENTHS" : @"/16" };
+}
 
 - (void)awakeWithContext:(id)context
 {
@@ -57,7 +126,46 @@
 
 - (void)configureOpenEars
 {
-    NSArray *words = [NSArray arrayWithObjects:@"WORD", @"STATEMENT", @"OTHER WORD", @"A PHRASE", nil];
+//    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+//    formatter.numberStyle = NSNumberFormatterSpellOutStyle;
+//    
+//    NSLog(@"%@", [formatter numberFromString:@"thirty-four"]);
+//    NSLog(@"%@", [formatter numberFromString:@"three point five"]);
+//    NSLog(@"%@", [formatter numberFromString:@"one fifth"]);
+//    
+//    
+//    NSArray * texts = @[@"It's 3 degrees outside", @"Ocho tacos", @"What is 3 1/2?", @"ocho"];
+//    for (NSString * text in texts)
+//    {
+//        NSLinguisticTaggerOptions options = NSLinguisticTaggerOmitWhitespace | NSLinguisticTaggerJoinNames;
+//        NSArray * tagSchemes = [NSLinguisticTagger availableTagSchemesForLanguage:@"en"];
+//        tagSchemes = [tagSchemes arrayByAddingObjectsFromArray:[NSLinguisticTagger availableTagSchemesForLanguage:@"es"]];
+//        
+//        NSLinguisticTagger * tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:tagSchemes
+//                                                                             options:options];
+//        [tagger setString:text];
+//        
+//        [tagger enumerateTagsInRange:NSMakeRange(0, [text length])
+//                              scheme:NSLinguisticTagSchemeNameTypeOrLexicalClass
+//                             options:options
+//                          usingBlock:^(NSString *tag, NSRange tokenRange, NSRange sentenceRange, BOOL *stop)
+//         {
+//             NSString *token = [text substringWithRange:tokenRange];
+//             NSLog(@"%@: %@", token, tag);
+//         }];
+//    }
+    
+    /* ANGLES - 45 DEGREES RIGHT, LEFT, ETC */
+    
+    
+    [self pocketsphinxDidReceiveHypothesis:@"FIVE FEET ONE AND A QUARTER INCHES BY FOUR AND THREE EIGHTHS INCHES" recognitionScore:@"0" utteranceID:@"12"];
+    
+    
+    NSArray *words = [NSArray arrayWithObjects:@"ONE", @"TWO", @"THREE", @"FOUR", @"FIVE", @"SIX", @"SEVEN", @"EIGHT", @"NINE", @"TEN",
+                      @"ELEVEN", @"TWELVE", @"THIRTEEN", @"FOURTEEN", @"FIFTEEN", @"SIXTEEN", @"SEVENTEEN", @"EIGHTEEN", @"NINETEEN",
+                      @"TWENTY", @"THIRTY", @"FORTY", @"FIFTY", @"SIXTY", @"SEVENTY", @"EIGHTY", @"NINETY", @"ONE HUNDRED",
+                      @"AND", @"A", @"INCHES", @"INCH", @"FEET", @"FOOT", @"BY"
+                      @"QUARTER", @"QUARTERS", @"FOURTH", @"FOURTHS", @"EIGHTH", @"EIGHTHS", @"HALF", @"SIXTEENTH", @"SIXTEENTHS", nil];
     NSString *languagModelFileName = @"NameIWantForMyLanguageModelFiles";
     NSString *accousticModel = @"AcousticModelEnglish";
     
@@ -86,6 +194,10 @@
                                                                     dictionaryAtPath:dictionaryPath
                                                                  acousticModelAtPath:[OEAcousticModel pathToModel:accousticModel]
                                                                  languageModelIsJSGF:NO];
+    
+    //Across-the-board noise reduction can be achieved by increasing the value of vadThreshold.
+    [[OEPocketsphinxController sharedInstance] setVadThreshold:3.5];
+    
 }
 
 - (void)appendText:(NSString*)text
@@ -102,11 +214,35 @@
 
 #pragma mark - OEEventsObserverDelegate
 
-- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID
+- (void)pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID
 {
     NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@", hypothesis, recognitionScore, utteranceID);
     
-    [self.label setText:hypothesis];
+    NSArray *words = [hypothesis componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+#warning - do I need to use a set of rules here dynamic grammar generation - http://www.politepix.com/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/
+    
+    NSMutableString *displayString = [NSMutableString new];
+    for (NSString *word in words)
+    {
+        NSString *transformedWord = self.wordReplacements[word];
+        
+        if (!transformedWord)
+        {
+            NSAssert(NO, @"Didn't find matching word!");
+            [self.label setText:@""];
+            return;
+        }
+        
+        if ([displayString hasSuffix:@"'"] && ![transformedWord hasPrefix:@" "])
+        {
+            [displayString appendString:@" "];
+        }
+        
+        [displayString appendString:transformedWord];
+    }
+    
+    [self.label setText:displayString];
 }
 
 - (void) pocketsphinxDidStartListening
