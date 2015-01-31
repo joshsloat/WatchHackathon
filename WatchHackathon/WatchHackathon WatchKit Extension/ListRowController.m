@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *itemLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *animatedBullet;
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *nonAnimatedBullet;
+@property (nonatomic, copy) NSString *listItemString;
 
 @end
 
@@ -25,6 +26,38 @@
     return @"ListRowIdentifier";
 }
 
+- (void)formatForStartListening
+{
+    self.listItemString = @"";
+    [self.itemLabel setText:self.listItemString];
+    [self startAnimating];
+}
+
+- (void)formatWithListItem:(NSString *)listItem withFontSize:(NSInteger)fontSize
+{
+    if (listItem.length > 0)
+    {
+        [self stopAnimating];
+    }
+    
+    self.listItemString = listItem;
+    
+    [self formatWithFontSize:fontSize];
+}
+
+- (void)formatWithFontSize:(NSInteger)fontSize
+{
+    UIFont *font = [UIFont systemFontOfSize:fontSize];
+    
+    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObject:font
+                                                                     forKey:NSFontAttributeName];
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:self.listItemString attributes:attributesDictionary];
+    
+    [self.itemLabel setAttributedText:attributedString];
+}
+
+#pragma mark - Private Methods
+
 - (void)startAnimating
 {
     [self.animatedBullet setImageNamed:@"Mic-"];
@@ -36,22 +69,6 @@
     [self.animatedBullet stopAnimating];
     [self.animatedBullet setHidden:YES];
     [self.nonAnimatedBullet setHidden:NO];
-}
-
-- (void)formatForStartListening
-{
-    [self.itemLabel setText:@""];
-    [self startAnimating];
-}
-
-- (void)formatWithListItem:(NSString *)listItem
-{
-    [self.itemLabel setText:listItem];
-    
-    if (listItem.length > 0)
-    {
-        [self stopAnimating];
-    }
 }
 
 @end

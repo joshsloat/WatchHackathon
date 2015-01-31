@@ -9,6 +9,11 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 
+static NSString * const kFontSizeKey = @"FontSize";
+static NSString * const kFontSizeChangeNotification = @"FontSizeChangeNotification";
+
 @interface TextSizeInterfaceController : WKInterfaceController
+
++ (NSString *)identifier;
 
 @end

@@ -14,9 +14,8 @@
 
 + (NSString *)identifier;
 
-//- (void)startAnimating;
-//- (void)stopAnimating;
 - (void)formatForStartListening;
-- (void)formatWithListItem:(NSString *)listItem;
+- (void)formatWithListItem:(NSString *)listItem withFontSize:(NSInteger)fontSize;
+- (void)formatWithFontSize:(NSInteger)fontSize;
 
 @end

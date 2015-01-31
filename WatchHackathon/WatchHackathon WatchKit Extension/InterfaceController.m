@@ -12,6 +12,8 @@
 #import <OpenEars/OEAcousticModel.h>
 #import <OpenEars/OEEventsObserver.h>
 #import "ListRowController.h"
+#import "TextSizeInterfaceController.h"
+#import "CommandsInterfaceController.h"
 
 @interface InterfaceController() <OEEventsObserverDelegate>
 
@@ -23,29 +25,36 @@
 
 @property (nonatomic) NSInteger rowIndex;
 
+@property (nonatomic) NSInteger fontSize;
+
+@property (nonatomic) BOOL isFontSizeChangePending;
+
+@property (nonatomic, strong) NSMutableArray *listItems;
+
 @end
 
 #warning - TODO
 /*
  mic permission in extension??
- long press menu to show available commands
  undo/redo with NSUndoManager
  clear
  needs logic to not assert on certain commands since there is no replacement - (clean/undo/redo)
- make each new entry a table view row
  could use paging for multiple lists
  ANGLES - 45 DEGREES RIGHT, LEFT, ETC
  ability to switch vocabularies - needed to support other types of lists
  twenty one would currently translate to 201
  issue with framework always being forgotten
  prsent text input with controller
- text size - bigger/smaller
- global tint color
 */
 
 @implementation InterfaceController
 
 #pragma mark - Init / Dealloc
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (instancetype)init
 {
@@ -54,6 +63,9 @@
     if (self)
     {
         _rowIndex = 0;
+        _fontSize = 12;
+        _isFontSizeChangePending = NO;
+        _listItems = [NSMutableArray new];
         [self initializeWordReplacements];
     }
     
@@ -113,6 +125,10 @@
     
     [self configureFirstTableRow];
     [self configureOpenEars];
+    
+    [self configureFontSizeNotification];
+    
+    [self pocketsphinxDidReceiveHypothesis:@"FIVE FEET ONE AND A QUARTER INCHES BY FOUR AND THREE EIGHTHS INCHES" recognitionScore:@"0" utteranceID:@"12"];
 }
 
 #pragma mark - Interface Lifecycle
@@ -121,6 +137,17 @@
 {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    
+    if (self.isFontSizeChangePending)
+    {        
+        for (int index = 0; index < self.listItems.count + 1; index++)
+        {
+            ListRowController *row = [self.listTable rowControllerAtIndex:index];
+            [row formatWithFontSize:self.fontSize];
+        }
+        
+        self.isFontSizeChangePending = NO;
+    }
 }
 
 - (void)didDeactivate
@@ -139,6 +166,14 @@
     [row formatForStartListening];
 }
 
+- (void)configureFontSizeNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveFontSizeChangeNotification:)
+                                                 name:kFontSizeChangeNotification
+                                               object:nil];
+}
+
 - (void)configureOpenEars
 {
     NSArray *words = [NSArray arrayWithObjects:@"ONE", @"TWO", @"THREE", @"FOUR", @"FIVE", @"SIX", @"SEVEN", @"EIGHT", @"NINE", @"TEN",
@@ -146,6 +181,7 @@
                       @"TWENTY", @"THIRTY", @"FORTY", @"FIFTY", @"SIXTY", @"SEVENTY", @"EIGHTY", @"NINETY", @"ONE HUNDRED",
                       @"AND", @"A", @"INCHES", @"INCH", @"FEET", @"FOOT", @"BY"
                       @"QUARTER", @"QUARTERS", @"FOURTH", @"FOURTHS", @"EIGHTH", @"EIGHTHS", @"HALF", @"SIXTEENTH", @"SIXTEENTHS", nil];
+    
     NSString *languagModelFileName = @"NameIWantForMyLanguageModelFiles";
     NSString *accousticModel = @"AcousticModelEnglish";
     
@@ -177,7 +213,6 @@
     
     //Across-the-board noise reduction can be achieved by increasing the value of vadThreshold.
     [[OEPocketsphinxController sharedInstance] setVadThreshold:3.5];
-    
 }
 
 - (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex
@@ -189,15 +224,23 @@
 
 - (IBAction)didSelectMenuItemCommands
 {
-    // stop listening while this is happening? how to resume?
-    
-    
+    [self presentControllerWithName:[CommandsInterfaceController identifier] context:nil];
 }
 
 - (IBAction)didSelectMenuItemTextSize
 {
-    // stop listening while this is happening? how to resume?
+    [self presentControllerWithName:[TextSizeInterfaceController identifier] context:[NSNumber numberWithFloat:self.fontSize]];
+}
+
+#pragma mark - Notifications
+
+- (void)didReceiveFontSizeChangeNotification:(NSNotification *)notification
+{
+    self.isFontSizeChangePending = YES;
     
+    NSDictionary *fontSizeDictionary = notification.userInfo;
+    NSNumber *fontSizeNumber = fontSizeDictionary[kFontSizeKey];
+    self.fontSize = fontSizeNumber.intValue;
 }
 
 #pragma mark - OEEventsObserverDelegate
@@ -230,8 +273,15 @@
         [displayString appendString:transformedWord];
     }
     
+    if (displayString.length == 0)
+    {
+        return;
+    }
+    
+    [self.listItems addObject:displayString];
+    
     ListRowController *row = [self.listTable rowControllerAtIndex:self.rowIndex];
-    [row formatWithListItem:displayString];
+    [row formatWithListItem:displayString withFontSize:self.fontSize];
     
     NSIndexSet *newIndexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(++self.rowIndex, 1)];
     [self.listTable insertRowsAtIndexes:newIndexes withRowType:[ListRowController identifier]];
