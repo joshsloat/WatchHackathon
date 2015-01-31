@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A4BA96661A7D4D510001BBAE /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4BA96621A7D4D510001BBAE /* AcousticModelEnglish.bundle */; };
-		A4BA96671A7D4D510001BBAE /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4BA96631A7D4D510001BBAE /* AcousticModelSpanish.bundle */; };
-		A4BA96681A7D4D510001BBAE /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BA96641A7D4D510001BBAE /* OpenEars.framework */; };
-		A4BA96691A7D4D510001BBAE /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BA96651A7D4D510001BBAE /* Slt.framework */; };
 		A4BA966B1A7D553F0001BBAE /* TextSize@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4BA966A1A7D553F0001BBAE /* TextSize@2x.png */; };
+		A4BA966E1A7D57780001BBAE /* TextSizeInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA966D1A7D57780001BBAE /* TextSizeInterfaceController.m */; };
+		A4BA96711A7D57970001BBAE /* CommandsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA96701A7D57970001BBAE /* CommandsInterfaceController.m */; };
 		A4D6EF311A7D299A00976605 /* ListRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6EF301A7D299A00976605 /* ListRowController.m */; };
 		A4D99DC01A7C220B001BD5BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D99DBF1A7C220B001BD5BC /* main.m */; };
 		A4D99DC31A7C220B001BD5BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D99DC21A7C220B001BD5BC /* AppDelegate.m */; };
@@ -35,6 +33,10 @@
 		A4D9F4971A7D456B0008B9CD /* Mic-4.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9F4911A7D456B0008B9CD /* Mic-4.png */; };
 		A4D9F4981A7D456B0008B9CD /* Mic-5.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9F4921A7D456B0008B9CD /* Mic-5.png */; };
 		A4D9F49A1A7D47F00008B9CD /* Mic-6.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9F4991A7D47F00008B9CD /* Mic-6.png */; };
+		A4E292E91A7D716200FF84C2 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4E292E51A7D716200FF84C2 /* AcousticModelEnglish.bundle */; };
+		A4E292EA1A7D716200FF84C2 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4E292E61A7D716200FF84C2 /* AcousticModelSpanish.bundle */; };
+		A4E292EB1A7D716200FF84C2 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E292E71A7D716200FF84C2 /* OpenEars.framework */; };
+		A4E292EC1A7D716300FF84C2 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E292E81A7D716200FF84C2 /* Slt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,11 +78,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A4BA96621A7D4D510001BBAE /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
-		A4BA96631A7D4D510001BBAE /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
-		A4BA96641A7D4D510001BBAE /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
-		A4BA96651A7D4D510001BBAE /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		A4BA966A1A7D553F0001BBAE /* TextSize@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TextSize@2x.png"; sourceTree = "<group>"; };
+		A4BA966C1A7D57780001BBAE /* TextSizeInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSizeInterfaceController.h; sourceTree = "<group>"; };
+		A4BA966D1A7D57780001BBAE /* TextSizeInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSizeInterfaceController.m; sourceTree = "<group>"; };
+		A4BA966F1A7D57970001BBAE /* CommandsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandsInterfaceController.h; sourceTree = "<group>"; };
+		A4BA96701A7D57970001BBAE /* CommandsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandsInterfaceController.m; sourceTree = "<group>"; };
 		A4D6EF2F1A7D299A00976605 /* ListRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListRowController.h; sourceTree = "<group>"; };
 		A4D6EF301A7D299A00976605 /* ListRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListRowController.m; sourceTree = "<group>"; };
 		A4D99DBA1A7C220B001BD5BC /* WatchHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,10 @@
 		A4D9F4911A7D456B0008B9CD /* Mic-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mic-4.png"; sourceTree = "<group>"; };
 		A4D9F4921A7D456B0008B9CD /* Mic-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mic-5.png"; sourceTree = "<group>"; };
 		A4D9F4991A7D47F00008B9CD /* Mic-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mic-6.png"; sourceTree = "<group>"; };
+		A4E292E51A7D716200FF84C2 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		A4E292E61A7D716200FF84C2 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		A4E292E71A7D716200FF84C2 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		A4E292E81A7D716200FF84C2 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,28 +141,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4BA96691A7D4D510001BBAE /* Slt.framework in Frameworks */,
+				A4E292EC1A7D716300FF84C2 /* Slt.framework in Frameworks */,
 				A4D99E1B1A7C2E0F001BD5BC /* AudioToolbox.framework in Frameworks */,
 				A4D99E1C1A7C2E0F001BD5BC /* AVFoundation.framework in Frameworks */,
-				A4BA96681A7D4D510001BBAE /* OpenEars.framework in Frameworks */,
+				A4E292EB1A7D716200FF84C2 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A4BA96611A7D4D510001BBAE /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				A4BA96621A7D4D510001BBAE /* AcousticModelEnglish.bundle */,
-				A4BA96631A7D4D510001BBAE /* AcousticModelSpanish.bundle */,
-				A4BA96641A7D4D510001BBAE /* OpenEars.framework */,
-				A4BA96651A7D4D510001BBAE /* Slt.framework */,
-			);
-			name = Framework;
-			path = ThirdParty/OpenEars/Framework;
-			sourceTree = "<group>";
-		};
 		A4D6EF2E1A7D293600976605 /* RowControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +300,10 @@
 			children = (
 				A4D99DEB1A7C22C8001BD5BC /* InterfaceController.h */,
 				A4D99DEC1A7C22C8001BD5BC /* InterfaceController.m */,
+				A4BA966C1A7D57780001BBAE /* TextSizeInterfaceController.h */,
+				A4BA966D1A7D57780001BBAE /* TextSizeInterfaceController.m */,
+				A4BA966F1A7D57970001BBAE /* CommandsInterfaceController.h */,
+				A4BA96701A7D57970001BBAE /* CommandsInterfaceController.m */,
 			);
 			name = InterfaceControllers;
 			sourceTree = "<group>";
@@ -321,9 +319,21 @@
 		A4D99E0B1A7C2C82001BD5BC /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				A4BA96611A7D4D510001BBAE /* Framework */,
+				A4E292E41A7D716200FF84C2 /* Framework */,
 			);
 			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		A4E292E41A7D716200FF84C2 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				A4E292E51A7D716200FF84C2 /* AcousticModelEnglish.bundle */,
+				A4E292E61A7D716200FF84C2 /* AcousticModelSpanish.bundle */,
+				A4E292E71A7D716200FF84C2 /* OpenEars.framework */,
+				A4E292E81A7D716200FF84C2 /* Slt.framework */,
+			);
+			name = Framework;
+			path = ThirdParty/OpenEars/Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,8 +476,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4BA96661A7D4D510001BBAE /* AcousticModelEnglish.bundle in Resources */,
-				A4BA96671A7D4D510001BBAE /* AcousticModelSpanish.bundle in Resources */,
+				A4E292E91A7D716200FF84C2 /* AcousticModelEnglish.bundle in Resources */,
+				A4E292EA1A7D716200FF84C2 /* AcousticModelSpanish.bundle in Resources */,
 				A4D99DF31A7C22C8001BD5BC /* WatchHackathon WatchKit App.app in Resources */,
 				A4D99DEF1A7C22C8001BD5BC /* Images.xcassets in Resources */,
 			);
@@ -517,6 +527,8 @@
 			files = (
 				A4D6EF311A7D299A00976605 /* ListRowController.m in Sources */,
 				A4D99DED1A7C22C8001BD5BC /* InterfaceController.m in Sources */,
+				A4BA966E1A7D57780001BBAE /* TextSizeInterfaceController.m in Sources */,
+				A4BA96711A7D57970001BBAE /* CommandsInterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +764,12 @@
 					"$(PROJECT_DIR)/WatchHackathon",
 					WatchKit,
 					Extension/ThirdParty/OpenEars/Framework,
+					"$(PROJECT_DIR)/WatchHackathon",
+					WatchKit,
+					Extension/ThirdParty/OpenEars/Framework,
+					"$(PROJECT_DIR)/WatchHackathon",
+					WatchKit,
+					Extension/ThirdParty/OpenEars/Framework,
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -769,6 +787,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/WatchHackathon",
+					WatchKit,
+					Extension/ThirdParty/OpenEars/Framework,
+					"$(PROJECT_DIR)/WatchHackathon",
+					WatchKit,
+					Extension/ThirdParty/OpenEars/Framework,
 					"$(PROJECT_DIR)/WatchHackathon",
 					WatchKit,
 					Extension/ThirdParty/OpenEars/Framework,

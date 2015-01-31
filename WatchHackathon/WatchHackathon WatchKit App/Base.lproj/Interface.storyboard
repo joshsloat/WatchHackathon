@@ -91,5 +91,47 @@
             </objects>
             <point key="canvasLocation" x="267.64102564102564" y="431.97435897435901"/>
         </scene>
+        <!--Close-->
+        <scene sceneID="J5b-fc-RKa">
+            <objects>
+                <controller identifier="TextSizeInterfaceIdentifier" title="Close" id="YhT-8F-tG3" customClass="TextSizeInterfaceController">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Aa" textAlignment="center" id="GH0-ET-tOn">
+                            <fontDescription key="font" type="system" pointSize="20"/>
+                        </label>
+                        <slider width="1" alignment="left" verticalAlignment="center" value="1" maximum="3" steps="3" id="Csg-SD-KRd">
+                            <connections>
+                                <action selector="slideDidChange:" destination="YhT-8F-tG3" id="293-Tz-Qup"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="GH0-ET-tOn"/>
+                            <exclude reference="Csg-SD-KRd"/>
+                        </mask>
+                    </variation>
+                    <variation key="device=watch42mm">
+                        <mask key="items">
+                            <include reference="GH0-ET-tOn"/>
+                            <include reference="Csg-SD-KRd"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="sizeSlider" destination="Csg-SD-KRd" id="f0x-9W-CdF"/>
+                        <outlet property="textSizeLabel" destination="GH0-ET-tOn" id="ASs-em-yb7"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="436.76923076923077" y="622.02564102564111"/>
+        </scene>
+        <!--CommandsInterfaceIdentifier-->
+        <scene sceneID="3Xc-m5-ogX">
+            <objects>
+                <controller identifier="CommandsInterfaceIdentifier" id="KHx-I3-I95" customClass="CommandsInterfaceController"/>
+            </objects>
+            <point key="canvasLocation" x="647.74358974358984" y="620.28205128205127"/>
+        </scene>
     </scenes>
+    <color key="tintColor" red="0.20392156862745098" green="0.62352941176470589" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
 </document>
