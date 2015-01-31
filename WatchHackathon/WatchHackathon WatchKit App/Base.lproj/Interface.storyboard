@@ -10,24 +10,86 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label alignment="left" text="Label" numberOfLines="0" id="ALn-zZ-3vh"/>
+                        <table alignment="left" id="uGK-ci-oWu">
+                            <items>
+                                <tableRow identifier="ListRowIdentifier" id="FKo-ek-SXI" customClass="ListRowController">
+                                    <group key="rootItem" width="1" height="100" alignment="left" id="LpD-vY-uMV">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" hidden="YES" text="○" id="hi9-Dh-pTV">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                            <imageView width="15" height="15" alignment="left" verticalAlignment="center" id="5Y6-I3-V5o"/>
+                                            <imageView width="15" height="15" alignment="left" verticalAlignment="center" hidden="YES" image="Mic-6.png" id="98n-tn-Ldi"/>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="83X-1j-iNZ">
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            </label>
+                                        </items>
+                                        <variation key="default">
+                                            <mask key="items">
+                                                <exclude reference="hi9-Dh-pTV"/>
+                                                <exclude reference="5Y6-I3-V5o"/>
+                                                <exclude reference="98n-tn-Ldi"/>
+                                                <exclude reference="83X-1j-iNZ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="device=watch42mm" height="25">
+                                            <mask key="items">
+                                                <include reference="hi9-Dh-pTV"/>
+                                                <include reference="5Y6-I3-V5o"/>
+                                                <include reference="98n-tn-Ldi"/>
+                                                <include reference="83X-1j-iNZ"/>
+                                            </mask>
+                                        </variation>
+                                    </group>
+                                    <connections>
+                                        <outlet property="animatedBullet" destination="5Y6-I3-V5o" id="gsT-Ny-KuR"/>
+                                        <outlet property="itemLabel" destination="83X-1j-iNZ" id="euH-tk-CC8"/>
+                                        <outlet property="nonAnimatedBullet" destination="98n-tn-Ldi" id="9am-gX-os7"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
+                    <menu key="menu" id="kyn-4M-KpV">
+                        <items>
+                            <menuItem title="Commands" icon="info" id="HxS-Qh-xQB">
+                                <connections>
+                                    <action selector="didSelectMenuItemCommands" destination="AgC-eL-Hgc" id="OuC-Ls-Rze"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Text Size" image="TextSize.png" id="kFd-qE-H57">
+                                <connections>
+                                    <action selector="didSelectMenuItemTextSize" destination="AgC-eL-Hgc" id="a5e-fG-DGp"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                        <variation key="default">
+                            <mask key="items">
+                                <exclude reference="kFd-qE-H57"/>
+                            </mask>
+                        </variation>
+                        <variation key="device=watch42mm">
+                            <mask key="items">
+                                <include reference="kFd-qE-H57"/>
+                            </mask>
+                        </variation>
+                    </menu>
                     <variation key="default">
                         <mask key="items">
-                            <exclude reference="ALn-zZ-3vh"/>
+                            <exclude reference="uGK-ci-oWu"/>
                         </mask>
                     </variation>
                     <variation key="device=watch42mm">
                         <mask key="items">
-                            <include reference="ALn-zZ-3vh"/>
+                            <include reference="uGK-ci-oWu"/>
                         </mask>
                     </variation>
                     <connections>
-                        <outlet property="label" destination="ALn-zZ-3vh" id="1No-je-cFt"/>
+                        <outlet property="listTable" destination="uGK-ci-oWu" id="0cb-Bc-hN1"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="267.64102564102564" y="432.19230769230774"/>
+            <point key="canvasLocation" x="267.64102564102564" y="431.97435897435901"/>
         </scene>
     </scenes>
 </document>
