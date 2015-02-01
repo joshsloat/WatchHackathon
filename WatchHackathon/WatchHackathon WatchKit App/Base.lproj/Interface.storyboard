@@ -20,7 +20,7 @@
                                             </label>
                                             <imageView width="15" height="15" alignment="left" verticalAlignment="center" id="5Y6-I3-V5o"/>
                                             <imageView width="15" height="15" alignment="left" verticalAlignment="center" hidden="YES" image="Mic-6.png" id="98n-tn-Ldi"/>
-                                            <label alignment="left" verticalAlignment="center" text="Label" id="83X-1j-iNZ">
+                                            <label alignment="left" verticalAlignment="center" id="83X-1j-iNZ">
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                             </label>
                                         </items>
@@ -128,9 +128,118 @@
         <!--CommandsInterfaceIdentifier-->
         <scene sceneID="3Xc-m5-ogX">
             <objects>
-                <controller identifier="CommandsInterfaceIdentifier" id="KHx-I3-I95" customClass="CommandsInterfaceController"/>
+                <controller identifier="CommandsInterfaceIdentifier" id="KHx-I3-I95" customClass="CommandsInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" hidden="YES" id="ElK-UO-toF">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="1" textAlignment="center" numberOfLines="0" id="j1q-PR-POY">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                            </items>
+                            <variation key="default">
+                                <mask key="items">
+                                    <exclude reference="j1q-PR-POY"/>
+                                </mask>
+                            </variation>
+                            <variation key="device=watch42mm">
+                                <mask key="items">
+                                    <include reference="j1q-PR-POY"/>
+                                </mask>
+                            </variation>
+                        </group>
+                        <separator alignment="left" verticalAlignment="center" hidden="YES" id="n22-kw-Kly"/>
+                        <group width="1" alignment="left" verticalAlignment="center" hidden="YES" id="mPu-07-dgT">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="2" textAlignment="center" numberOfLines="0" id="b0d-oW-2D1">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                            </items>
+                            <variation key="default">
+                                <mask key="items">
+                                    <exclude reference="b0d-oW-2D1"/>
+                                </mask>
+                            </variation>
+                            <variation key="device=watch42mm">
+                                <mask key="items">
+                                    <include reference="b0d-oW-2D1"/>
+                                </mask>
+                            </variation>
+                        </group>
+                        <separator alignment="left" verticalAlignment="center" hidden="YES" id="nih-oE-tCc"/>
+                        <group width="1" alignment="left" verticalAlignment="center" hidden="YES" id="z8y-YE-2Rw">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="3" textAlignment="center" numberOfLines="0" id="HrW-cc-hsm">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                            </items>
+                            <variation key="default">
+                                <mask key="items">
+                                    <exclude reference="HrW-cc-hsm"/>
+                                </mask>
+                            </variation>
+                            <variation key="device=watch42mm">
+                                <mask key="items">
+                                    <include reference="HrW-cc-hsm"/>
+                                </mask>
+                            </variation>
+                        </group>
+                        <separator alignment="left" verticalAlignment="center" hidden="YES" id="6ad-1I-HhF"/>
+                        <group width="1" alignment="left" verticalAlignment="center" hidden="YES" id="ANB-SU-LLs">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="4" textAlignment="center" id="J3P-xm-pWp">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                            </items>
+                            <variation key="default">
+                                <mask key="items">
+                                    <exclude reference="J3P-xm-pWp"/>
+                                </mask>
+                            </variation>
+                            <variation key="device=watch42mm">
+                                <mask key="items">
+                                    <include reference="J3P-xm-pWp"/>
+                                </mask>
+                            </variation>
+                        </group>
+                    </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="ElK-UO-toF"/>
+                            <exclude reference="n22-kw-Kly"/>
+                            <exclude reference="mPu-07-dgT"/>
+                            <exclude reference="nih-oE-tCc"/>
+                            <exclude reference="z8y-YE-2Rw"/>
+                            <exclude reference="6ad-1I-HhF"/>
+                            <exclude reference="ANB-SU-LLs"/>
+                        </mask>
+                    </variation>
+                    <variation key="device=watch42mm">
+                        <mask key="items">
+                            <include reference="ElK-UO-toF"/>
+                            <include reference="n22-kw-Kly"/>
+                            <include reference="mPu-07-dgT"/>
+                            <include reference="nih-oE-tCc"/>
+                            <include reference="z8y-YE-2Rw"/>
+                            <include reference="6ad-1I-HhF"/>
+                            <include reference="ANB-SU-LLs"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="example1Label" destination="j1q-PR-POY" id="AAi-Uc-1NK"/>
+                        <outlet property="example2Label" destination="b0d-oW-2D1" id="f7Y-y4-AWY"/>
+                        <outlet property="example3Label" destination="HrW-cc-hsm" id="49S-JV-q6z"/>
+                        <outlet property="example4Label" destination="J3P-xm-pWp" id="kLw-Pl-KkM"/>
+                        <outlet property="group1" destination="ElK-UO-toF" id="Hzt-0e-Mcg"/>
+                        <outlet property="group2" destination="mPu-07-dgT" id="qds-PQ-xgU"/>
+                        <outlet property="group3" destination="z8y-YE-2Rw" id="HRz-Ks-OaB"/>
+                        <outlet property="group4" destination="ANB-SU-LLs" id="RQC-Zj-MxP"/>
+                        <outlet property="separator1" destination="n22-kw-Kly" id="JH7-FR-YP9"/>
+                        <outlet property="separator2" destination="nih-oE-tCc" id="xBo-tP-oAT"/>
+                        <outlet property="separator3" destination="6ad-1I-HhF" id="AMA-rb-a9z"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="647.74358974358984" y="620.28205128205127"/>
+            <point key="canvasLocation" x="647.74358974358984" y="619.41025641025647"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.20392156862745098" green="0.62352941176470589" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
