@@ -29,7 +29,7 @@
 - (void)formatForStartListening
 {
     self.listItemString = @"";
-    [self.itemLabel setText:self.listItemString];
+    [self.itemLabel setText:@""];
     [self startAnimating];
 }
 
@@ -60,6 +60,8 @@
 
 - (void)startAnimating
 {
+    [self.animatedBullet setHidden:NO];
+    [self.nonAnimatedBullet setHidden:YES];
     [self.animatedBullet setImageNamed:@"Mic-"];
     [self.animatedBullet startAnimatingWithImagesInRange:NSMakeRange(0, 6) duration:2.0 repeatCount:0];
 }

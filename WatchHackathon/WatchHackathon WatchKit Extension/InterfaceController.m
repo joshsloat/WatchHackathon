@@ -36,18 +36,22 @@
 #warning - TODO
 /*
  mic permission in extension??
+ if wrist put down, does extension go out of memory or stick around?
  undo/redo with NSUndoManager
- clear
  needs logic to not assert on certain commands since there is no replacement - (clean/undo/redo)
  could use paging for multiple lists
  ANGLES - 45 DEGREES RIGHT, LEFT, ETC
+ cubic dimensions - x by y by z
  ability to switch vocabularies - needed to support other types of lists
  twenty one would currently translate to 201
  issue with framework always being forgotten
  prsent text input with controller
+ commands interface controller
 */
 
 @implementation InterfaceController
+
+static NSString * const kClearCommand = @"CLEAR LIST";
 
 #pragma mark - Init / Dealloc
 
@@ -128,7 +132,7 @@
     
     [self configureFontSizeNotification];
     
-    [self pocketsphinxDidReceiveHypothesis:@"FIVE FEET ONE AND A QUARTER INCHES BY FOUR AND THREE EIGHTHS INCHES" recognitionScore:@"0" utteranceID:@"12"];
+    //[self pocketsphinxDidReceiveHypothesis:@"FIVE FEET ONE AND A QUARTER INCHES BY FOUR AND THREE EIGHTHS INCHES" recognitionScore:@"0" utteranceID:@"12"];
 }
 
 #pragma mark - Interface Lifecycle
@@ -160,6 +164,7 @@
 
 - (void)configureFirstTableRow
 {
+    self.rowIndex = 0;
     [self.listTable setNumberOfRows:1 withRowType:[ListRowController identifier]];
     
     ListRowController *row = [self.listTable rowControllerAtIndex:0];
@@ -180,7 +185,8 @@
                       @"ELEVEN", @"TWELVE", @"THIRTEEN", @"FOURTEEN", @"FIFTEEN", @"SIXTEEN", @"SEVENTEEN", @"EIGHTEEN", @"NINETEEN",
                       @"TWENTY", @"THIRTY", @"FORTY", @"FIFTY", @"SIXTY", @"SEVENTY", @"EIGHTY", @"NINETY", @"ONE HUNDRED",
                       @"AND", @"A", @"INCHES", @"INCH", @"FEET", @"FOOT", @"BY"
-                      @"QUARTER", @"QUARTERS", @"FOURTH", @"FOURTHS", @"EIGHTH", @"EIGHTHS", @"HALF", @"SIXTEENTH", @"SIXTEENTHS", nil];
+                      @"QUARTER", @"QUARTERS", @"FOURTH", @"FOURTHS", @"EIGHTH", @"EIGHTHS", @"HALF", @"SIXTEENTH", @"SIXTEENTHS",
+                      kClearCommand, nil];
     
     NSString *languagModelFileName = @"NameIWantForMyLanguageModelFiles";
     NSString *accousticModel = @"AcousticModelEnglish";
@@ -217,7 +223,8 @@
 
 - (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex
 {
-    [self pocketsphinxDidReceiveHypothesis:@"FIVE FEET ONE AND A QUARTER INCHES BY FOUR AND THREE EIGHTHS INCHES" recognitionScore:@"0" utteranceID:@"12"];
+    [self pocketsphinxDidReceiveHypothesis:kClearCommand recognitionScore:@"0" utteranceID:@"12"];
+    //[self pocketsphinxDidReceiveHypothesis:@"FIVE FEET ONE AND A QUARTER INCHES BY FOUR AND THREE EIGHTHS INCHES" recognitionScore:@"0" utteranceID:@"12"];
 }
 
 #pragma mark - Menu Actions
@@ -246,8 +253,17 @@
 #pragma mark - OEEventsObserverDelegate
 
 - (void)pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID
-{
+{    
     NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@", hypothesis, recognitionScore, utteranceID);
+    
+    if ([hypothesis isEqualToString:kClearCommand])
+    {
+        NSIndexSet *indexesToRemove = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, self.listTable.numberOfRows)];
+        [self.listTable removeRowsAtIndexes:indexesToRemove];
+        [self configureFirstTableRow];
+        [self.listItems removeAllObjects];
+        return;
+    }
     
     NSArray *words = [hypothesis componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
@@ -273,7 +289,7 @@
         [displayString appendString:transformedWord];
     }
     
-    if (displayString.length == 0)
+    if ([displayString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0)
     {
         return;
     }
